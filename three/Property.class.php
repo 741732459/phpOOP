@@ -1,7 +1,10 @@
 <?php
 
 class Sea{
-
+ private $navigability = 0;
+ function __construct($navigability){
+     $this->navigability = $navigability;
+ }
 }
 
 class EarthSea extends Sea{
@@ -60,6 +63,6 @@ class TerrainFactory{
 }
 
 
-$factory = new TerrainFactory(new EarthSea(),new EarthForest(),new Plains());
-print_r($factory->getForest());
+$factory = new TerrainFactory(new EarthSea(-2),new EarthForest(),new Plains());
+print_r($factory->getSea());
 ?>
